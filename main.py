@@ -1,4 +1,20 @@
 def read_population_data(filename):
+    """
+    Reads population data from a file.
+
+    Parameters:
+    filename (str): The name of the file containing population data.
+
+    Returns:
+    list: A list of tuples containing country name, area, and population.
+    """
+    population_data = []
+    with open(filename, 'r') as file:
+        for line in file:
+            country, area, population = line.strip().split(',')
+            population_data.append((country.strip(), float(area.strip()), int(population.strip())))
+    return population_data
+def read_population_data(filename):
     population_data = []
     with open(filename, 'r') as file:
         for line in file:
