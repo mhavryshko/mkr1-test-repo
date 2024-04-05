@@ -2,6 +2,7 @@ import pytest
 import os
 from  main import read_population_data, sort_by_area, sort_by_population
 
+
 @pytest.fixture
 def sample_data_file(tmpdir):
     # Creating a temporary file with sample data
@@ -17,6 +18,7 @@ Brazil, 8516000, 212000000"""
         f.write(data)
     return file_path
 
+
 def test_read_population_data(sample_data_file):
     # Test reading population data from the file
     expected_data = [
@@ -29,6 +31,7 @@ def test_read_population_data(sample_data_file):
         ('Brazil', 8516000.0, 212000000)
     ]
     assert read_population_data(sample_data_file) == expected_data
+
 
 def test_sort_by_area(sample_data_file):
     # Test sorting population data by area
