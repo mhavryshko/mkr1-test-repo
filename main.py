@@ -14,6 +14,8 @@ def read_population_data(filename):
             country, area, population = line.strip().split(',')
             population_data.append((country.strip(), float(area.strip()), int(population.strip())))
     return population_data
+
+    
 def read_population_data(filename):
     population_data = []
     with open(filename, 'r') as file:
